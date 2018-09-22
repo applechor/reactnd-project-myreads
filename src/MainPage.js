@@ -10,7 +10,24 @@ class MainPage extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <BookShelf />
+            <BookShelf 
+            	shelf="currentlyReading"
+            	shelfTitle="Currently Reading"
+            	books={this.props.books}
+            	moveShelf={this.props.moveShelf}
+            />
+            <BookShelf 
+            	shelf="wantToRead"
+            	shelfTitle="Want to Read"
+            	books={this.props.books}
+            	moveShelf={this.props.moveShelf}
+            />
+            <BookShelf 
+            	shelf="read"
+            	shelfTitle="Read"
+            	books={this.props.books}
+            	moveShelf={this.props.moveShelf}
+            />
           </div>
         </div>
         <div className="open-search">
