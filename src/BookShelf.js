@@ -11,13 +11,14 @@ class BookShelf extends React.Component {
 	        <ol className="books-grid">
 		        {this.props.books
 		        	.filter((book) => (
-		        		book.shelf === this.props.shelf)
+		        		book.shelf === this.props.currentShelf)
 		        	)
 		        	.map((book) => (
 			        	<li key={book.id}>
 			        		<Book
 			        			book={book}
 			        			moveShelf={this.props.moveShelf}
+			        			currentShelf={this.props.currentShelf}
 			        		/>
 			        	</li>)
 		        	)
