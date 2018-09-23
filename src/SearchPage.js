@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import Book from './Book'
 
-class SearchPage extends React.Component {
+class SearchPage extends Component {
 	state = {
 		query: '',
 		searchedResults: []
@@ -36,7 +36,8 @@ class SearchPage extends React.Component {
           <Link 
           	to="/"
           	className="close-search" 
-          	>Close</Link>
+          	>Close
+          </Link>
           <div className="search-books-input-wrapper">
             {/*
               NOTES: The search from BooksAPI is limited to a particular set of search terms.
@@ -52,24 +53,31 @@ class SearchPage extends React.Component {
             	value={this.state.query}
             	onChange={(event) => this.updateQuery(event.target.value)}
             />
-
           </div>
         </div>
+
         <div className="search-books-results">
           <ol className="books-grid">
-          {this.state.searchedResults.map((searchedResult) => (
-
-						<li key={searchedResult.id}> 
-							<Book
-	        			book={searchedResult}
-	        			moveShelf={this.props.moveShelf}
-	        			/*currentShelf={this.props.currentShelf}*/
-			        />
-
-          	</li>
-
-          ))}
-          	
+          {this.state.searchedResults
+          	.map((searchedResult) => {
+          		let shelf = 'none'
+          		
+          		this.props.books
+          			.map((book) => (
+          				book.id === searchedResult.id ? 
+          				shelf = this.props.shelf : ""
+          			))
+          		return (
+								<li key={searchedResult.id}> 
+									<Book
+			        			book={searchedResult}
+			        			moveShelf={this.props.moveShelf}
+			        			currentShelf={shelf}
+					        />
+		          	</li>
+          		)
+          	})
+          }
           </ol>
         </div>
       </div>

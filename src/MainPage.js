@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import BookShelf from './BookShelf'
 
-class MainPage extends React.Component {
+class MainPage extends Component {
 	render() {
 		return (
 			<div className="list-books">
@@ -37,7 +37,6 @@ class MainPage extends React.Component {
           >Add a book</Link>
         </div>
       </div>
-
 		);
 	}
 }

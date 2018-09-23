@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Book extends React.Component {
+class Book extends Component {
 	render () {
 		let showingThumbnail = this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail:"";
 		return (
@@ -30,11 +30,6 @@ class Book extends React.Component {
 	  );
 
 	}
-
 }
-
-
-
-
 
 export default Book

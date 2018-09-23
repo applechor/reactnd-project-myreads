@@ -6,7 +6,7 @@ import SearchPage from './SearchPage'
 import './App.css'
 
 
-class BooksApp extends React.Component {
+class BooksApp extends Component {
   state = {
     books: []
     /**
@@ -25,17 +25,16 @@ class BooksApp extends React.Component {
   } 
 
   moveShelf = (book, shelf) => {
-    console.log(`moved to ${shelf}`);
+    //console.log(`moved to ${shelf}`);
     BooksAPI.update(book, shelf)
       .then(() => BooksAPI.getAll())
       .then(books => this.setState({books}))
       .catch(error => console.log(error))
-      console.log(this.state.books);
+      //console.log(this.state.books);
   }
   
-
   render() {
-    console.log(this.state.books)
+    //console.log(this.state.books)
     return (
       <div className="app">
         <Route 
@@ -51,17 +50,11 @@ class BooksApp extends React.Component {
           path="/search"
           render={() => (
             <SearchPage 
+            books = {this.state.books}
             moveShelf={this.moveShelf}
             />
           )}  
         />
-
-
-
-
-          
-         
-        
       </div>
     )
   }
