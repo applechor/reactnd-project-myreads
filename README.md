@@ -7,9 +7,8 @@ For this project, it was about creating bookself App that allow you to select an
 1. clone this respository.
 2. cd to directory which has this respository.
 3. install all project dependencies with `npm install`. 
-4. install React Router with `npm install --save react-router-dom`
-5. start the development server with `npm start`
-6. launch the site in your browser at http://localhost:3000
+4. start the development server with `npm start`.
+5. launch the site in your browser at http://localhost:3000.
 
 ## Backend Server
 
