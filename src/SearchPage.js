@@ -36,8 +36,8 @@ class SearchPage extends Component {
           <Link 
           	to="/"
           	className="close-search" 
-          	>Close
-          </Link>
+          >Close</Link>
+          
           <div className="search-books-input-wrapper">
             {/*
               NOTES: The search from BooksAPI is limited to a particular set of search terms.
@@ -61,7 +61,7 @@ class SearchPage extends Component {
           {this.state.searchedResults
           	.map((searchedResult) => {
           		let shelf = 'none'
-          		
+
           		this.props.books
           			.map((book) => (
           				book.id === searchedResult.id ? 

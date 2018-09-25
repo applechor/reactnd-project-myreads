@@ -10,7 +10,8 @@ class Book extends Component {
           	style={{ 
           		width: 128, 
           		height: 193, 
-          		backgroundImage: `url(${showingThumbnail})`}}></div>
+          		backgroundImage: `url(${showingThumbnail})`}}
+          ></div>
           <div className="book-shelf-changer">
             <select 
             	value={this.props.currentShelf}
@@ -28,7 +29,6 @@ class Book extends Component {
         <div className="book-authors">{this.props.book.authors}</div>
       </div>
 	  );
-
 	}
 }
 

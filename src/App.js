@@ -41,8 +41,8 @@ class BooksApp extends Component {
           exact path="/" 
           render={() => (
             <MainPage 
-            books = {this.state.books}
-            moveShelf={this.moveShelf}
+              books = {this.state.books}
+              moveShelf={this.moveShelf}
             />
           )}
         />
@@ -50,13 +50,13 @@ class BooksApp extends Component {
           path="/search"
           render={() => (
             <SearchPage 
-            books = {this.state.books}
-            moveShelf={this.moveShelf}
+              books = {this.state.books}
+              moveShelf={this.moveShelf}
             />
           )}  
         />
       </div>
-    )
+    );
   }
 }
 
